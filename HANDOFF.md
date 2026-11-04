@@ -30,7 +30,7 @@ Generated 2026-11-03 from the RasterLab app source at `RasterLab/RasterLab/Raste
 4. **Children / general-audience statement** and **regional rights language** (GDPR, CCPA) in the privacy policy.
 5. **Location tagging behaviour.** The usage string says location is added to photos; I found `LocationManager` but did not trace the EXIF/QuickTime metadata write. Confirm the wording "attached to captures".
 6. **Zip package purpose.** Listed as "archive handling for bundled shader resources"; confirm the actual use. `External/game-music-emu` is vendored in the repo but not referenced from app sources I searched; it is not listed on the site. Confirm whether it ships in the binary.
-7. **Hosting domain.** Pages use relative links and work at a domain root or sub-path. OG image path is relative and should become absolute once the domain is known.
+7. ~~Hosting domain.~~ Done 2026-11-04: canonical links, absolute OG image/URL, `sitemap.xml`, `robots.txt` and `.nojekyll` point at https://joemattiello.dev/rasterlab-site/.
 
 To make `make check` fail while any draft marker remains: `make check STRICT=1`.
 
