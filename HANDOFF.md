@@ -1,6 +1,6 @@
 # Handoff: RasterLab website
 
-Generated 2026-11-03 from the RasterLab app source at `RasterLab/RasterLab/RasterLab` (branch `develop`, commit 815ace7). Nothing here is deployed; this is a local static site in its own git repository.
+Generated 2026-11-03 from the RasterLab app source at `RasterLab/RasterLab/RasterLab` (branch `develop`, commit 815ace7). Published 2026-11-03 via GitHub Pages from `main` of https://github.com/JoeMatt/rasterlab-site (public). Live URLs: https://joemattiello.dev/rasterlab-site/ , /support/ and /privacy/ (the github.io address redirects there because the account's user site carries the `joemattiello.dev` custom domain).
 
 ## Files
 
@@ -36,6 +36,6 @@ To make `make check` fail while any draft marker remains: `make check STRICT=1`.
 
 ## Not done / out of scope
 
-- No deploy, DNS, GitHub remote, App Store Connect or signing changes.
+- No DNS, App Store Connect or signing changes. Draft markers are still visible on the live pages until the owner items above are resolved.
 - No screenshots of the app; the landing page uses the app icon only. Real device screenshots would improve the hero.
 - The app repository was not modified.
