@@ -49,6 +49,6 @@ DNS is Namecheap BasicDNS. Required records (Advanced DNS):
 | A | @ | 185.199.108.153, 185.199.109.153, 185.199.110.153, 185.199.111.153 (four records) |
 | AAAA | @ | 2606:50c0:8000::153, 2606:50c0:8001::153, 2606:50c0:8002::153, 2606:50c0:8003::153 (four records) |
 | CNAME | www | joematt.github.io. |
-| TXT | _github-pages-challenge-JoeMatt | value from github.com/settings/pages, Add a domain |
+| TXT | _github-pages-challenge-joematt | value from github.com/settings/pages (added) |
 
-Records above were written through the Namecheap API on 2026-11-04 (credentials and API whitelist are kept outside this repo). The GitHub domain-verification TXT record is **not yet added**. Mail Settings stays on **Email Forwarding** (MX eforward1-5, SPF `include:spf.efwd.registrar-servers.com`). Forwarding rule: `support@rasterlab.app` to the owner's personal inbox (set 2026-11-04). Not yet tested with a real message. `.app` is HSTS-preloaded, so the site only loads over HTTPS once GitHub has issued the certificate.
+Records above were written through the Namecheap API on 2026-11-04 (credentials and API whitelist are kept outside this repo). The GitHub domain-verification TXT record was added 2026-11-04 as `_github-pages-challenge-joematt` (Namecheap's API rejects uppercase host names; DNS is case-insensitive). Keep it in place. Mail Settings stays on **Email Forwarding** (MX eforward1-5, SPF `include:spf.efwd.registrar-servers.com`). Forwarding rule: `support@rasterlab.app` to the owner's personal inbox (set 2026-11-04). Not yet tested with a real message. `.app` is HSTS-preloaded, so the site only loads over HTTPS once GitHub has issued the certificate.
