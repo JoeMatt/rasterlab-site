@@ -1,6 +1,6 @@
 # Handoff: RasterLab website
 
-Generated 2026-11-03 from the RasterLab app source at `RasterLab/RasterLab/RasterLab` (branch `develop`, commit 815ace7). Published 2026-11-03 via GitHub Pages from `main` of https://github.com/JoeMatt/rasterlab-site (public). Live URLs: https://joemattiello.dev/rasterlab-site/ , /support/ and /privacy/ (the github.io address redirects there because the account's user site carries the `joemattiello.dev` custom domain).
+Generated 2026-11-03 from the RasterLab app source at `RasterLab/RasterLab/RasterLab` (branch `develop`, commit 815ace7). Published 2026-11-03 via GitHub Pages from `main` of https://github.com/JoeMatt/rasterlab-site (public). Live URLs since 2026-11-04: https://rasterlab.app/ , https://rasterlab.app/support/ and https://rasterlab.app/privacy/ (Let's Encrypt certificate, HTTPS enforced). The old joemattiello.dev/rasterlab-site/ address and www.rasterlab.app redirect there.
 
 ## Files
 
@@ -51,4 +51,4 @@ DNS is Namecheap BasicDNS. Required records (Advanced DNS):
 | CNAME | www | joematt.github.io. |
 | TXT | _github-pages-challenge-JoeMatt | value from github.com/settings/pages, Add a domain |
 
-Mail Settings stays on **Email Forwarding** (MX eforward1-5, SPF `include:spf.efwd.registrar-servers.com`). Forwarding rule: `support` to the owner's inbox. `.app` is HSTS-preloaded, so the site only loads over HTTPS once GitHub has issued the certificate.
+Records above were written through the Namecheap API on 2026-11-04 (key in 1Password `op://Private/Namecheap/API Key`, API whitelist IP 69.123.171.72). The GitHub domain-verification TXT record is **not yet added**. Mail Settings stays on **Email Forwarding** (MX eforward1-5, SPF `include:spf.efwd.registrar-servers.com`). Forwarding rule: `support@rasterlab.app` to the owner's personal inbox (set 2026-11-04). Not yet tested with a real message. `.app` is HSTS-preloaded, so the site only loads over HTTPS once GitHub has issued the certificate.
