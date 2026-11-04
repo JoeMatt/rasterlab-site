@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RasterLab Privacy Policy</title>
+<meta name="description" content="How the RasterLab camera app handles camera, microphone, photo, location and other data.">
+<meta name="theme-color" content="#04210d">
+<link rel="icon" href="../assets/app-icon-512.png" type="image/png">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <nav class="wrap nav" aria-label="Primary">
+    <a class="brand" href="../"><img src="../assets/app-icon-512.png" alt="" width="32" height="32"><span>RasterLab</span></a>
+    <ul>
+      <li><a class="link" href="../">Home</a></li>
+      <li><a class="link" href="../support/">Support</a></li>
+      <li><a class="link" href="./" aria-current="page">Privacy</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="main" class="wrap doc">
+  <header>
+    <p class="eyebrow">Privacy policy</p>
+    <h1>RasterLab Privacy Policy</h1>
+    <p class="lede">RasterLab is a camera app. Your photos and videos are rendered and stored on your device. This policy explains which device features the app uses, what it stores, and what it does not do.</p>
+    <p class="meta">Applies to: RasterLab for iOS and iPadOS, its app extensions, and the RasterLab Remote watch app · Developer: Matti Media LLC · Effective date: <span class="todo">to be set on publication</span></p>
+    <div class="draft"><strong>Draft · needs owner confirmation</strong>This text was written from the app's source code, privacy manifests, entitlements and permission strings. Items marked like <span class="todo">this</span> could not be verified from source and must be confirmed by Matti Media LLC before the page is published or linked from App Store Connect.</div>
+  </header>
+
+  <article>
+    <nav class="toc" aria-label="On this page">
+      <strong>On this page</strong>
+      <ol>
+        <li><a href="#summary">Summary</a></li>
+        <li><a href="#collection">Data collection and tracking</a></li>
+        <li><a href="#permissions">Device permissions</a></li>
+        <li><a href="#storage">What is stored on your device</a></li>
+        <li><a href="#sharing">Sharing and third parties</a></li>
+        <li><a href="#network">Network access</a></li>
+        <li><a href="#apple-apis">Apple required‑reason APIs</a></li>
+        <li><a href="#children">Children</a></li>
+        <li><a href="#rights">Your choices</a></li>
+        <li><a href="#changes">Changes to this policy</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ol>
+    </nav>
+
+    <h2 id="summary">Summary</h2>
+    <ul class="list">
+      <li>RasterLab's App Store privacy manifest declares <strong>no collected data types</strong> and <strong>no tracking</strong>.</li>
+      <li>The app contains no analytics, advertising or crash‑reporting SDKs, and no code that uploads media or usage information to a server.</li>
+      <li>Camera, microphone and photo library access are used only to capture, render and save your media on the device.</li>
+      <li>Location access is optional and, when granted, is used to tag your captures.</li>
+      <li>Settings and in‑progress recordings are stored locally, including in a shared container used by the app's extensions.</li>
+    </ul>
+
+    <h2 id="collection">Data collection and tracking</h2>
+    <p>RasterLab ships an Apple privacy manifest (<code>PrivacyInfo.xcprivacy</code>) in the app and in its shared framework. Both declare:</p>
+    <table>
+      <tbody>
+        <tr><th scope="row">Tracking</th><td><code>NSPrivacyTracking = false</code>. The app does not track you across apps or websites owned by other companies.</td></tr>
+        <tr><th scope="row">Tracking domains</th><td>None.</td></tr>
+        <tr><th scope="row">Collected data types</th><td>None. The app does not send personal data, identifiers, usage data or diagnostics to the developer.</td></tr>
+      </tbody>
+    </table>
+    <p>Apple may collect crash logs and analytics from your device according to your own iOS settings (<em>Settings → Privacy &amp; Security → Analytics &amp; Improvements</em>). That data is governed by Apple's privacy policy, not by RasterLab.</p>
+
+    <h2 id="permissions">Device permissions</h2>
+    <p>iOS asks for each permission the first time it is needed and shows the purpose string below. You can change any of them later in Settings.</p>
+    <table>
+      <thead><tr><th>Permission</th><th>Purpose shown by iOS</th><th>How RasterLab uses it</th></tr></thead>
+      <tbody>
+        <tr><td>Camera</td><td>“RasterLab uses the camera to capture retro‑filtered photos and videos”</td><td>Live preview, photo and video capture. Camera frames are processed on the GPU in memory and are not stored unless you capture.</td></tr>
+        <tr><td>Microphone</td><td>“RasterLab records audio for your videos with retro filters”</td><td>Audio for video recordings and Live Photos. Not accessed outside of recording.</td></tr>
+        <tr><td>Photo Library — add</td><td>“RasterLab saves your retro‑filtered photos and videos to your photo library”</td><td>Writes finished captures to Photos.</td></tr>
+        <tr><td>Photo Library — read</td><td>“RasterLab accesses your photo library to save captured media”</td><td>Shows your recent captures in the in‑app gallery and editor, and lets the Photos editing extension work on an image you choose.</td></tr>
+        <tr><td>Location (while using the app)</td><td>“RasterLab adds location data to your photos for better organization”</td><td>Optional. When granted, the current location is attached to captures so Photos can organize them by place. Location is never sent to the developer.</td></tr>
+        <tr><td>Siri &amp; Shortcuts</td><td>“RasterLab needs permission to allow quick actions from Siri.”</td><td>Enables App Intents for quick capture from Siri, Shortcuts, widgets and Control Center.</td></tr>
+      </tbody>
+    </table>
+    <p>The Lock Screen capture extension requests Camera and Photo Library permissions with equivalent purpose strings.</p>
+
+    <h2 id="storage">What is stored on your device</h2>
+    <ul class="list">
+      <li><strong>Captured media.</strong> Finished photos, Live Photos and videos are saved to your Photo Library. The developer has no access to them.</li>
+      <li><strong>Recordings in progress and recovery data.</strong> While recording, RasterLab writes recoverable movie fragments and a small recovery journal to local app storage. If a recording is interrupted, these are kept until you choose Save, Restore or Discard. Live still captures are held in a durable local inbox until they are imported into Photos.</li>
+      <li><strong>Preferences.</strong> Filter favorites, saved filter chains, quality preset, recent filter history and similar settings are stored with <code>UserDefaults</code>.</li>
+      <li><strong>Shared container.</strong> The app and its extensions (Lock Screen capture, widgets, Share, Photos editing and Spotlight) share an App Group container (<code>group.com.mattimedia.rasterlab</code>) so they can read the same settings and hand off captures. This container is on your device only.</li>
+      <li><strong>Spotlight index.</strong> The Spotlight extension can index items so they appear in on‑device search. Spotlight indexes stay on the device.</li>
+      <li><strong>No iCloud sync by the app.</strong> RasterLab does not use iCloud or CloudKit entitlements. If your Photo Library syncs through iCloud Photos, that is your Apple account setting and is governed by Apple.</li>
+    </ul>
+    <p>Deleting the app removes its local storage and shared container. Media already saved to Photos remains in your library.</p>
+
+    <h2 id="sharing">Sharing and third parties</h2>
+    <p>RasterLab does not sell, rent or share personal data with third parties. Media leaves your device only when you choose to share it using the iOS Share sheet or when your Photo Library syncs under your own Apple account settings.</p>
+    <p>The app includes the following open‑source components. They run entirely on your device and do not communicate with their authors:</p>
+    <ul class="list">
+      <li><a href="https://github.com/marmelroy/Zip" rel="noopener">Zip</a> — archive handling for bundled shader resources.</li>
+      <li><a href="https://github.com/s1ddok/Alloy" rel="noopener">Alloy</a> — Metal rendering helpers.</li>
+    </ul>
+    <p>The RasterLab Remote watch app exchanges control messages with the iPhone app over Apple's Watch Connectivity framework between your own paired devices.</p>
+
+    <h2 id="network">Network access</h2>
+    <p>Our review of the app's source found no networking code: no URL sessions, sockets or background transfer tasks, and no third‑party analytics, advertising or crash‑reporting libraries. The app does not need an internet connection to function.</p>
+
+    <h2 id="apple-apis">Apple required‑reason APIs</h2>
+    <p>Apple requires apps to declare certain system APIs and the reason for using them. RasterLab declares:</p>
+    <table>
+      <thead><tr><th>API category</th><th>Declared reasons</th><th>Meaning</th></tr></thead>
+      <tbody>
+        <tr><td>User defaults</td><td><code>CA92.1</code>, <code>1C8F.1</code></td><td>Read and write the app's own settings, including settings shared with its extensions through the App Group.</td></tr>
+        <tr><td>File timestamp</td><td><code>C617.1</code></td><td>Read timestamps of files inside the app's own container, for example to manage recordings and recovery data.</td></tr>
+      </tbody>
+    </table>
+
+    <h2 id="children">Children</h2>
+    <p><span class="todo">Needs owner confirmation:</span> RasterLab is a general‑audience camera app and is not directed at children. The app does not knowingly collect personal information from anyone, including children, because it collects no personal information at all.</p>
+
+    <h2 id="rights">Your choices</h2>
+    <ul class="list">
+      <li>Revoke or change any permission at any time in <em>Settings → Apps → RasterLab</em>. The app continues to work without optional permissions such as Location and Siri.</li>
+      <li>Delete captures from the Photos app. Delete the app to remove all local app data.</li>
+      <li>Because RasterLab holds no account or server‑side data about you, there is nothing for the developer to export, correct or delete on request. <span class="todo">Owner to confirm applicable regional rights language (GDPR, CCPA/CPRA) if required for the markets where the app is sold.</span></li>
+    </ul>
+
+    <h2 id="changes">Changes to this policy</h2>
+    <p>If a future version of RasterLab adds a feature that changes how data is handled, this page will be updated and the effective date revised before that version is released.</p>
+
+    <h2 id="contact">Contact</h2>
+    <p>Matti Media LLC<br><span class="todo">Privacy contact email or address to be added by owner</span></p>
+  </article>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap row">
+    <div>© 2025 Matti Media LLC. All rights reserved.</div>
+    <ul>
+      <li><a href="../">Home</a></li>
+      <li><a href="../support/">Support</a></li>
+    </ul>
+  </div>
+</footer>
+</body>
+</html>

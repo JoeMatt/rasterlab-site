@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RasterLab — Retro shader camera for iPhone</title>
+<meta name="description" content="RasterLab is a camera app that applies RetroArch-inspired CRT, VHS, handheld and film shaders to the live preview, photos and video in real time.">
+<meta name="theme-color" content="#04210d">
+<meta property="og:title" content="RasterLab — Retro shader camera for iPhone">
+<meta property="og:description" content="Live-preview more than a thousand retro shaders, then record them in real time.">
+<meta property="og:image" content="assets/app-icon-512.png">
+<link rel="icon" href="assets/app-icon-512.png" type="image/png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <nav class="wrap nav" aria-label="Primary">
+    <a class="brand" href="./"><img src="assets/app-icon-512.png" alt="" width="32" height="32"><span>RasterLab</span></a>
+    <ul>
+      <li><a class="link" href="./" aria-current="page">Home</a></li>
+      <li><a class="link" href="support/">Support</a></li>
+      <li><a class="link" href="privacy/">Privacy</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="main">
+  <section class="hero" aria-labelledby="hero-title" style="border-top:0">
+    <div class="wrap hero-grid">
+      <div>
+        <p class="eyebrow">Retro shader camera · iPhone &amp; iPad</p>
+        <h1 id="hero-title">Shoot through a CRT.<br>Record it live.</h1>
+        <p class="lede">RasterLab runs RetroArch‑inspired shaders on your camera feed in real time: scanlines, phosphor masks, VHS tracking, handheld LCDs and film looks. What you see in the preview is what gets recorded.</p>
+        <div class="cta-row">
+          <a class="btn primary" href="support/">Get help &amp; FAQ</a>
+          <a class="btn ghost" href="privacy/">Privacy policy</a>
+        </div>
+        <p class="note">Requires iOS 26 or later. Apple Watch remote requires watchOS 10.6 or later.</p>
+        <div class="draft"><strong>Draft · needs owner confirmation</strong>App Store availability and download link are not yet verified, so no store badge is shown. Add the link once the listing is live.</div>
+      </div>
+      <img class="hero-art" src="assets/app-icon-512.png" width="320" height="320" alt="RasterLab app icon: a line-drawn camera whose viewfinder shows a CRT pixel grid, in bright green on dark green.">
+    </div>
+  </section>
+
+  <section aria-labelledby="stats-title">
+    <div class="wrap">
+      <h2 id="stats-title" class="visually-hidden" style="position:absolute;left:-9999px">By the numbers</h2>
+      <div class="stats">
+        <div class="stat"><b>1,024</b><span>shaders in the bundled catalog, with precomputed previews for 1,020</span></div>
+        <div class="stat"><b>Real time</b><span>filters render on the GPU with Metal during preview and recording</span></div>
+        <div class="stat"><b>Up to 120 Hz</b><span>Performance, Balanced and Quality frame‑rate presets for ProMotion displays</span></div>
+        <div class="stat"><b>On device</b><span>the app declares no data collection and no tracking in its privacy manifest</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="features-title">
+    <div class="wrap">
+      <h2 id="features-title">Everything happens in the viewfinder</h2>
+      <p class="sub">Filters are not a post‑processing step. RasterLab renders the shader into the live preview and writes that same filtered output to disk while you record.</p>
+      <div class="grid">
+        <div class="card"><span class="k">Catalog</span><h3>A shader library, not a filter pack</h3><p>Retro gaming consoles and handhelds, arcade CRTs, home video, cinema grades, monitor emulations and artistic effects. Multi‑pass presets such as CRT‑Royale are supported.</p></div>
+        <div class="card"><span class="k">Recording</span><h3>Filtered video and Live Photos</h3><p>Record with the look applied, with audio, straight to your Photo Library. Live Photos keep the filtered motion. Recordings are written as recoverable fragments so an interruption does not lose the take.</p></div>
+        <div class="card"><span class="k">Gestures</span><h3>Full‑screen controls</h3><p>Swipe left for a random shader, swipe right to step back through your history, pinch to zoom, double‑tap to focus, long‑press to lock focus and tap once to hide the UI.</p></div>
+        <div class="card"><span class="k">Editing</span><h3>Trim and review clips</h3><p>Open your recordings in the built‑in editor to scrub the filmstrip, trim the ends and keep the parts you want before sharing.</p></div>
+        <div class="card"><span class="k">System integration</span><h3>Lock Screen, Control Center, Siri</h3><p>Launch capture from the Lock Screen camera control, Control Center and Home Screen widgets, Siri and Shortcuts. Edit existing photos through the Photos editing extension, and share into RasterLab from other apps.</p></div>
+        <div class="card"><span class="k">Apple Watch</span><h3>Remote shutter on your wrist</h3><p>The RasterLab Remote watch app talks to your iPhone over Watch Connectivity so you can start and stop capture from a distance.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="perf-title">
+    <div class="wrap two">
+      <div>
+        <h2 id="perf-title">Built for the GPU you already have</h2>
+        <p class="sub" style="margin-bottom:12px">RasterLab's rendering pipeline is written in Swift 6 and Metal. Camera delivery keeps only the newest frame, preview and recording run on their own workers, and the shader catalog ships with hash‑verified thumbnails so the browser never has to compile a shader just to show you a preview.</p>
+      </div>
+      <ul class="list">
+        <li>Quality presets at 30, 60 and 120 frames per second, switchable without restarting capture.</li>
+        <li>Pre‑roll recording keeps a bounded buffer of compressed video so you can capture a moment that already happened.</li>
+        <li>Recovery journal restores an interrupted recording and lets you save, restore or discard it explicitly.</li>
+        <li>Optional location tagging of captures, only when you grant location access.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section aria-labelledby="req-title">
+    <div class="wrap">
+      <h2 id="req-title">Requirements</h2>
+      <div class="grid">
+        <div class="card"><h3>iPhone and iPad</h3><p>iOS 26.0 or later. A device with a Metal‑capable GPU is required for real‑time shaders. ProMotion displays unlock the 120 Hz preset.</p></div>
+        <div class="card"><h3>Apple Watch (optional)</h3><p>watchOS 10.6 or later for the RasterLab Remote companion app.</p></div>
+        <div class="card"><h3>Permissions</h3><p>Camera, Microphone and Photo Library are needed to capture and save. Location and Siri are optional. See the <a href="privacy/">privacy policy</a> for details.</p></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap row">
+    <div>© 2025 Matti Media LLC. All rights reserved.</div>
+    <ul>
+      <li><a href="support/">Support</a></li>
+      <li><a href="privacy/">Privacy</a></li>
+    </ul>
+  </div>
+</footer>
+</body>
+</html>

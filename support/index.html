@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RasterLab Support</title>
+<meta name="description" content="Help, FAQ and troubleshooting for the RasterLab retro shader camera app.">
+<meta name="theme-color" content="#04210d">
+<link rel="icon" href="../assets/app-icon-512.png" type="image/png">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <nav class="wrap nav" aria-label="Primary">
+    <a class="brand" href="../"><img src="../assets/app-icon-512.png" alt="" width="32" height="32"><span>RasterLab</span></a>
+    <ul>
+      <li><a class="link" href="../">Home</a></li>
+      <li><a class="link" href="./" aria-current="page">Support</a></li>
+      <li><a class="link" href="../privacy/">Privacy</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="main" class="wrap doc">
+  <header>
+    <p class="eyebrow">Support</p>
+    <h1>Help with RasterLab</h1>
+    <p class="lede">Answers to common questions, troubleshooting steps for capture and performance, and how to reach us.</p>
+  </header>
+
+  <article>
+    <nav class="toc" aria-label="On this page">
+      <strong>On this page</strong>
+      <ol>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#getting-started">Getting started</a></li>
+        <li><a href="#faq">Frequently asked questions</a></li>
+        <li><a href="#troubleshooting">Troubleshooting</a></li>
+        <li><a href="#permissions">Permissions</a></li>
+        <li><a href="#report">Reporting a problem</a></li>
+      </ol>
+    </nav>
+
+    <h2 id="contact">Contact</h2>
+    <p>Support is provided by Matti Media LLC, the developer of RasterLab.</p>
+    <div class="draft"><strong>Draft · needs owner confirmation</strong>No support email, issue tracker or contact form is defined in the app source, so none is listed here. Before publishing, add the real contact route (for example a support mailbox or a public issue tracker). App Store Connect requires this page to offer a working way to contact you.</div>
+    <p>Contact: <span class="todo">support address to be added by Matti Media LLC</span></p>
+
+    <h2 id="getting-started">Getting started</h2>
+    <ol class="list">
+      <li>Open RasterLab and allow <strong>Camera</strong> access. Allow <strong>Microphone</strong> if you want sound in videos.</li>
+      <li>Swipe <strong>left</strong> anywhere on the viewfinder to jump to a random shader, or open the filter browser to search the catalog by name, console or style.</li>
+      <li>Swipe <strong>right</strong> to step back through the shaders you have already tried.</li>
+      <li>Tap the shutter for a photo, or hold or tap the record control for video. The filter you see is what gets saved.</li>
+      <li>Allow <strong>Photo Library</strong> access when asked so captures can be saved to Photos.</li>
+    </ol>
+
+    <h2 id="faq">Frequently asked questions</h2>
+
+    <details><summary>Are the filters applied after recording?</summary><div class="body"><p>No. RasterLab renders the shader on the GPU during preview and writes that filtered output directly while recording. There is no separate export or processing step, and the saved video matches the preview.</p></div></details>
+    <details><summary>How many shaders are included?</summary><div class="body"><p>The bundled catalog contains 1,024 shader presets ported from RetroArch‑style sources, covering console and handheld emulation, arcade and monitor CRTs, home video, film and artistic looks. Preview thumbnails ship for 1,020 of them; the remaining four show a placeholder until selected.</p></div></details>
+    <details><summary>Why does a shader look different in the browser thumbnail than on the live preview?</summary><div class="body"><p>Thumbnails are precomputed images generated from a fixed test pattern. The live preview renders the real shader against your camera feed at your current resolution and frame rate, so detail such as phosphor masks and scanline spacing will differ.</p></div></details>
+    <details><summary>What do the Performance, Balanced and Quality presets do?</summary><div class="body"><p>They set the target frame rate: 30, 60 and 120 frames per second. Complex multi‑pass shaders may hold a steadier rate on Performance. Quality only reaches 120 Hz on ProMotion‑capable devices. You can switch presets without restarting the camera.</p></div></details>
+    <details><summary>Can I record Live Photos with a filter?</summary><div class="body"><p>Yes. Filtered Live Photos keep the filtered motion clip alongside the still. Live capture uses the same real‑time pipeline as video.</p></div></details>
+    <details><summary>Can I edit a video or photo I already have?</summary><div class="body"><p>Existing photos can be edited through RasterLab's editing extension inside the Photos app (tap Edit, then the extensions menu). You can also share media into RasterLab from other apps using the Share sheet.</p></div></details>
+    <details><summary>Does RasterLab work on iPad or Apple Watch?</summary><div class="body"><p>The app supports iPhone and iPad on iOS 26 or later. The RasterLab Remote watch app (watchOS 10.6 or later) acts as a remote shutter and status display for the iPhone app; it does not render shaders on the watch.</p></div></details>
+    <details><summary>Is my footage uploaded anywhere?</summary><div class="body"><p>No. Captures are rendered and saved on your device. The app's privacy manifest declares no data collection and no tracking. See the <a href="../privacy/">privacy policy</a>.</p></div></details>
+
+    <h2 id="troubleshooting">Troubleshooting</h2>
+
+    <h3>The preview is black or frozen</h3>
+    <ul class="list">
+      <li>Check <em>Settings → Privacy &amp; Security → Camera</em> and make sure RasterLab is enabled.</li>
+      <li>Close other apps that may be using the camera, then reopen RasterLab.</li>
+      <li>If another app recently used the camera (for example a video call), lock and unlock the device and try again.</li>
+    </ul>
+
+    <h3>Recording stopped or the app was interrupted</h3>
+    <p>RasterLab writes recordings in recoverable fragments. If a call, a low‑memory event or a crash interrupts a take, the next launch offers to <strong>Save</strong>, <strong>Restore</strong> or <strong>Discard</strong> the recovered clip. Nothing is imported into Photos until you choose Save.</p>
+
+    <h3>Frame rate drops or the device gets warm</h3>
+    <ul class="list">
+      <li>Switch to the <strong>Balanced</strong> or <strong>Performance</strong> preset.</li>
+      <li>Prefer single‑pass shaders for long recordings; multi‑pass CRT emulations are the most demanding.</li>
+      <li>Thermal throttling is handled by iOS. Let the device cool and performance returns on its own.</li>
+    </ul>
+
+    <h3>Videos have no sound</h3>
+    <p>Enable Microphone access under <em>Settings → Privacy &amp; Security → Microphone</em>, then start a new recording. Recordings made before the permission was granted have no audio track.</p>
+
+    <h3>Captures do not appear in Photos</h3>
+    <p>Grant <em>Add Photos Only</em> or <em>Full Access</em> for RasterLab under <em>Settings → Apps → RasterLab → Photos</em>. Recovered clips are only imported after you choose Save.</p>
+
+    <h3>Lock Screen, Control Center or Siri shortcuts do nothing</h3>
+    <ul class="list">
+      <li>Add the RasterLab control in <em>Settings → Control Center</em> or in the Lock Screen customization gallery.</li>
+      <li>Siri and Shortcuts actions require the Siri permission to be granted once; you will be prompted the first time.</li>
+    </ul>
+
+    <h3>The Apple Watch remote shows "not connected"</h3>
+    <p>Make sure the RasterLab iPhone app is open in the foreground, Bluetooth is on and the watch is unlocked. Watch Connectivity needs the phone app to be running to accept commands.</p>
+
+    <h2 id="permissions">Permissions and what they are for</h2>
+    <table>
+      <thead><tr><th>Permission</th><th>Required?</th><th>Why RasterLab asks</th></tr></thead>
+      <tbody>
+        <tr><td>Camera</td><td>Yes</td><td>Capture filtered photos and videos.</td></tr>
+        <tr><td>Microphone</td><td>For video audio</td><td>Record sound with your videos.</td></tr>
+        <tr><td>Photo Library</td><td>To save and edit</td><td>Save captures and open existing media in the editor.</td></tr>
+        <tr><td>Location (while using)</td><td>Optional</td><td>Tag captures with location so Photos can organize them by place.</td></tr>
+        <tr><td>Siri &amp; Shortcuts</td><td>Optional</td><td>Allow quick‑capture actions from Siri, Shortcuts and widgets.</td></tr>
+      </tbody>
+    </table>
+
+    <h2 id="report">Reporting a problem</h2>
+    <p>When you report an issue, please include your device model, iOS version, the RasterLab version from <em>Settings → Apps → RasterLab</em>, the shader name if the problem is filter‑specific, and the steps to reproduce.</p>
+    <div class="draft"><strong>Draft · needs owner confirmation</strong>Point this section at the same contact route as above once it exists.</div>
+  </article>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap row">
+    <div>© 2025 Matti Media LLC. All rights reserved.</div>
+    <ul>
+      <li><a href="../">Home</a></li>
+      <li><a href="../privacy/">Privacy</a></li>
+    </ul>
+  </div>
+</footer>
+</body>
+</html>
