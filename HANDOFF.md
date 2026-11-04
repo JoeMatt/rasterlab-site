@@ -24,13 +24,13 @@ Generated 2026-11-03 from the RasterLab app source at `RasterLab/RasterLab/Raste
 
 ## Needs owner confirmation before publishing (all marked in-page with "Draft · needs owner confirmation" or a dashed `todo` chip)
 
-1. **Support contact route.** No email, form or issue tracker exists in source. App Store Connect requires one on the Support URL page. (`support/index.html` × 2)
-2. **Privacy contact** and **effective date**. (`privacy/index.html`)
+1. ~~Support contact route.~~ Done 2026-11-04: `support@rasterlab.app`, delivered by a Namecheap email-forwarding rule. The forwarding rule must exist for this to work.
+2. **Effective date** still needed (`privacy/index.html`). Privacy contact now uses `support@rasterlab.app`.
 3. **App Store link / availability.** Not verified; no badge or link is shown on the landing page.
 4. **Children / general-audience statement** and **regional rights language** (GDPR, CCPA) in the privacy policy.
 5. **Location tagging behaviour.** The usage string says location is added to photos; I found `LocationManager` but did not trace the EXIF/QuickTime metadata write. Confirm the wording "attached to captures".
 6. **Zip package purpose.** Listed as "archive handling for bundled shader resources"; confirm the actual use. `External/game-music-emu` is vendored in the repo but not referenced from app sources I searched; it is not listed on the site. Confirm whether it ships in the binary.
-7. ~~Hosting domain.~~ Done 2026-11-04: canonical links, absolute OG image/URL, `sitemap.xml`, `robots.txt` and `.nojekyll` point at https://joemattiello.dev/rasterlab-site/.
+7. ~~Hosting domain.~~ Done 2026-11-04: canonical links, absolute OG image/URL, `sitemap.xml`, `robots.txt` and `.nojekyll` point at https://rasterlab.app/ (custom domain, `CNAME` file).
 
 To make `make check` fail while any draft marker remains: `make check STRICT=1`.
 
@@ -39,3 +39,16 @@ To make `make check` fail while any draft marker remains: `make check STRICT=1`.
 - No DNS, App Store Connect or signing changes. Draft markers are still visible on the live pages until the owner items above are resolved.
 - No screenshots of the app; the landing page uses the app icon only. Real device screenshots would improve the hero.
 - The app repository was not modified.
+
+## Custom domain: rasterlab.app
+
+DNS is Namecheap BasicDNS. Required records (Advanced DNS):
+
+| Type | Host | Value |
+|---|---|---|
+| A | @ | 185.199.108.153, 185.199.109.153, 185.199.110.153, 185.199.111.153 (four records) |
+| AAAA | @ | 2606:50c0:8000::153, 2606:50c0:8001::153, 2606:50c0:8002::153, 2606:50c0:8003::153 (four records) |
+| CNAME | www | joematt.github.io. |
+| TXT | _github-pages-challenge-JoeMatt | value from github.com/settings/pages, Add a domain |
+
+Mail Settings stays on **Email Forwarding** (MX eforward1-5, SPF `include:spf.efwd.registrar-servers.com`). Forwarding rule: `support` to the owner's inbox. `.app` is HSTS-preloaded, so the site only loads over HTTPS once GitHub has issued the certificate.

@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://joemattiello.dev/rasterlab-site/sitemap.xml
+Sitemap: https://rasterlab.app/sitemap.xml
